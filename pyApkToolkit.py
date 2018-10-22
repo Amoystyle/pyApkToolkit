@@ -225,7 +225,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
     def aboutBox(self):
         title = "关于"
         msg = "程序：pyApkToolkit 1.0.0\r\n"\
-              "作者：Arnold\r\n"\
+              "作者：Arno\r\n"\
               "Copyright (c) 2018 - 2019, Arno.\r\n"\
               "All Rights Reserved."
         QMessageBox.information(self, title, msg)
@@ -356,7 +356,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
 
     # 重建.apk
     def on_pushButton_ReApk(self):
-        self.lineEdit_ReApk.setText('H:/Android/test/app-release1')
+        # self.lineEdit_ReApk.setText('H:/Android/test/app-release1')
         path = self.lineEdit_ReApk.text()
 
         if os.path.isdir(path):
@@ -416,8 +416,8 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
         pass
 
     def on_pushButton_Apk2Jar(self):
-        self.lineEdit_Dex2Jar.setText('H:/Android/test/app-release.apk')
-        path = self.lineEdit_Dex2Jar.text()
+        # self.lineEdit_Dex2Jar.setText('H:/Android/test/app-release.apk')
+        path = self.lineEdit_Apk2Jar.text()
         output, extension = os.path.splitext(path)
         apk = os.path.basename(path)
 
@@ -426,7 +426,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
             tm = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
             self.addLog("[{}] 转换文件: {}, 请稍后...\r\n".format(tm, apk))
 
-            # 检测到目录：H:\Android\test\classes-dex2jar.jar已存在，删除此目录！
+            # 检测到目录：H:\Android\test\app-release-dex2jar.jar已存在，删除此目录！
             output += '-dex2jar.jar'
             if os.path.isfile(output):
                 self.addLog("检测到文件: {} 已存在, 删除此目录！\r\n".format(output))
