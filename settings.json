@@ -1,0 +1,7 @@
+{
+    "KeyStorePath": "D:/Project/Python_Code/pyApkToolkit/keystore.jks",
+    "StorePassword": "arno123",
+    "KeyAlias": "arno",
+    "KeyPassword": "arno123",
+    "RememberPassword": true
+}

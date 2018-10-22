@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>450</width>
+    <height>540</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>450</width>
+    <height>540</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>450</width>
+    <height>540</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>ApkToolkit - By Arno</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>449</width>
+     <height>291</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>工具</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>5</y>
+       <width>436</width>
+       <height>136</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>.apk工具</string>
+     </property>
+     <widget class="QLineEdit" name="lineEdit_DeApk">
+      <property name="geometry">
+       <rect>
+        <x>13</x>
+        <y>17</y>
+        <width>330</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>330</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>330</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;h4&gt;&lt;p&gt;提示：&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;拖拽要反编译的.apk文件到此！&lt;br&gt;&lt;font color = 'red'&gt;注意：&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;路径中不能出现中文字符！&lt;/font&gt;&lt;/p&gt;&lt;/h4&gt;</string>
+      </property>
+      <property name="dragEnabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_ReApk">
+      <property name="geometry">
+       <rect>
+        <x>13</x>
+        <y>47</y>
+        <width>330</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>330</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>330</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;h4&gt;&lt;p&gt;提示：&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;拖拽要重建文件夹到此！&lt;br&gt;&lt;font color = 'red'&gt;注意：&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;路径中不能出现中文字符！&lt;/font&gt;&lt;/p&gt;&lt;/h4&gt;</string>
+      </property>
+      <property name="dragEnabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_OptzApk">
+      <property name="geometry">
+       <rect>
+        <x>13</x>
+        <y>77</y>
+        <width>330</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>330</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>330</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;h4&gt;&lt;p&gt;提示：&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;拖拽要优化的.apk文件到此！&lt;/p&gt;&lt;/h4&gt;</string>
+      </property>
+      <property name="dragEnabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_SignApk">
+      <property name="geometry">
+       <rect>
+        <x>13</x>
+        <y>107</y>
+        <width>330</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>330</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>330</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;h4&gt;&lt;p&gt;提示：&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;拖拽要签名的.apk文件到此！&lt;/p&gt;&lt;/h4&gt;</string>
+      </property>
+      <property name="dragEnabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_DeApk">
+      <property name="geometry">
+       <rect>
+        <x>349</x>
+        <y>16</y>
+        <width>81</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>81</width>
+        <height>23</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>反编译.apk</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_ReApk">
+      <property name="geometry">
+       <rect>
+        <x>349</x>
+        <y>46</y>
+        <width>81</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>81</width>
+        <height>23</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>重建.apk</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_OptzApk">
+      <property name="geometry">
+       <rect>
+        <x>349</x>
+        <y>76</y>
+        <width>81</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>81</width>
+        <height>23</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>优化.apk</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_SignApk">
+      <property name="geometry">
+       <rect>
+        <x>349</x>
+        <y>106</y>
+        <width>81</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>81</width>
+        <height>23</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>签名.apk</string>
+      </property>
+     </widget>
+     <zorder>pushButton_DeApk</zorder>
+     <zorder>pushButton_ReApk</zorder>
+     <zorder>pushButton_OptzApk</zorder>
+     <zorder>pushButton_SignApk</zorder>
+     <zorder>lineEdit_ReApk</zorder>
+     <zorder>lineEdit_OptzApk</zorder>
+     <zorder>lineEdit_SignApk</zorder>
+     <zorder>lineEdit_DeApk</zorder>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>145</y>
+       <width>436</width>
+       <height>46</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>framework-res.apk工具</string>
+     </property>
+     <widget class="QLineEdit" name="lineEdit_Framework">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>16</y>
+        <width>330</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>330</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>330</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;h4&gt;&lt;p&gt;提示：&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;拖拽要安装的Framework-res.apk文件到此！&lt;/p&gt;&lt;/h4&gt;</string>
+      </property>
+      <property name="dragEnabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_InsFramework">
+      <property name="geometry">
+       <rect>
+        <x>347</x>
+        <y>16</y>
+        <width>40</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>安装</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_ViewFramework">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>16</y>
+        <width>40</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>查看</string>
+      </property>
+     </widget>
+     <zorder>pushButton_InsFramework</zorder>
+     <zorder>pushButton_ViewFramework</zorder>
+     <zorder>lineEdit_Framework</zorder>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>195</y>
+       <width>436</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>.jar工具</string>
+     </property>
+     <widget class="QLineEdit" name="lineEdit_Apk2Jar">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>17</y>
+        <width>330</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>330</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>330</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;h4&gt;&lt;p&gt;提示：&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;拖拽要转换的.apk文件到此！&lt;/p&gt;&lt;/h4&gt;</string>
+      </property>
+      <property name="dragEnabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_Dex2Jar">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>42</y>
+        <width>330</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>330</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>330</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;h4&gt;&lt;p&gt;提示：&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;拖拽要转换的.dex文件到此！&lt;/p&gt;&lt;/h4&gt;</string>
+      </property>
+      <property name="frame">
+       <bool>true</bool>
+      </property>
+      <property name="dragEnabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Apk2Jar">
+      <property name="geometry">
+       <rect>
+        <x>347</x>
+        <y>16</y>
+        <width>81</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>81</width>
+        <height>23</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>.apk转.jar</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_Dex2Jar">
+      <property name="geometry">
+       <rect>
+        <x>347</x>
+        <y>41</y>
+        <width>81</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>81</width>
+        <height>23</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>.dex转.jar</string>
+      </property>
+     </widget>
+     <zorder>pushButton_Apk2Jar</zorder>
+     <zorder>pushButton_Dex2Jar</zorder>
+     <zorder>lineEdit_Apk2Jar</zorder>
+     <zorder>lineEdit_Dex2Jar</zorder>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>签名</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_6">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>5</y>
+       <width>433</width>
+       <height>188</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>433</width>
+       <height>188</height>
+      </size>
+     </property>
+     <property name="title">
+      <string>Key store</string>
+     </property>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>90</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Key store path:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>80</y>
+        <width>114</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Key store password:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>108</y>
+        <width>60</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Key alias:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>11</x>
+        <y>136</y>
+        <width>78</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Key password:</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_Remember">
+      <property name="geometry">
+       <rect>
+        <x>129</x>
+        <y>156</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Remember passwords</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_CreateKeyStore">
+      <property name="geometry">
+       <rect>
+        <x>208</x>
+        <y>44</y>
+        <width>86</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>86</width>
+        <height>23</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Create new...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_ChooseKeyStore">
+      <property name="geometry">
+       <rect>
+        <x>299</x>
+        <y>44</y>
+        <width>129</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>129</width>
+        <height>23</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Choose existing...</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_KeyStorePath">
+      <property name="geometry">
+       <rect>
+        <x>129</x>
+        <y>16</y>
+        <width>297</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>297</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;指定密钥库的名称&lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#ff0000;&quot;&gt;keystore.jks&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_StorePassword">
+      <property name="geometry">
+       <rect>
+        <x>129</x>
+        <y>77</y>
+        <width>297</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>297</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;指定密钥库的密码(获取keystore信息所需的密码)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_KeyAlias">
+      <property name="geometry">
+       <rect>
+        <x>129</x>
+        <y>103</y>
+        <width>297</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>297</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;指定别名(每个keystore都关联这一个独一无二的alias，这个alias通常不区分大小写)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_KeyPassword">
+      <property name="geometry">
+       <rect>
+        <x>129</x>
+        <y>129</y>
+        <width>297</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>297</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;指定别名条目的密码(私钥的密码)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_7">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>200</y>
+       <width>433</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>433</width>
+       <height>56</height>
+      </size>
+     </property>
+     <property name="title">
+      <string>Signature</string>
+     </property>
+     <widget class="QCheckBox" name="checkBox_V1Signature">
+      <property name="geometry">
+       <rect>
+        <x>129</x>
+        <y>20</y>
+        <width>125</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V1(Jar Signature)</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_V2Signature">
+      <property name="geometry">
+       <rect>
+        <x>259</x>
+        <y>20</y>
+        <width>145</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>V2(Full APK Signature)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>114</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Signature Versions:</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>选项</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>5</y>
+       <width>436</width>
+       <height>66</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>常规</string>
+     </property>
+     <widget class="QCheckBox" name="checkBox_ReAutoOptz">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>287</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>重建.apk时，自动对重建后的.apk文件进行优化。</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox_ReAutoSign">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>287</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>优化.apk时，自动对优化后的.apk文件进行签名。</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>75</y>
+       <width>436</width>
+       <height>46</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>修复</string>
+     </property>
+     <widget class="QCheckBox" name="checkBox_DeAutoFix">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>359</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>反编译.apk时，自动修复.xml文件重出现的'@*android:'错误。</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_Log">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>290</y>
+     <width>54</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>54</width>
+     <height>12</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>40</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>日志 ：</string>
+   </property>
+  </widget>
+  <widget class="QSplitter" name="splitter">
+   <property name="geometry">
+    <rect>
+     <x>272</x>
+     <y>290</y>
+     <width>175</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <widget class="QPushButton" name="pushButton_ClearLog">
+    <property name="minimumSize">
+     <size>
+      <width>40</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>40</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>清除</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_ExportLog">
+    <property name="minimumSize">
+     <size>
+      <width>40</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>40</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>导出</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_About">
+    <property name="minimumSize">
+     <size>
+      <width>40</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>40</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>关于</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_CheckEvn">
+    <property name="minimumSize">
+     <size>
+      <width>40</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>40</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>检测</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPlainTextEdit" name="plainTextEdit_Log">
+   <property name="geometry">
+    <rect>
+     <x>5</x>
+     <y>310</y>
+     <width>441</width>
+     <height>226</height>
+    </rect>
+   </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
+   <property name="lineWrapMode">
+    <enum>QPlainTextEdit::NoWrap</enum>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="plainText">
+    <string>提示：使用apksigner，只能在APK文件签名之前执行zipalign。
+如果您使用apksigner对APK进行签名并对APK进行进一步更改，则其签名将失效。
+</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>lineEdit_DeApk</tabstop>
+  <tabstop>pushButton_DeApk</tabstop>
+  <tabstop>lineEdit_ReApk</tabstop>
+  <tabstop>pushButton_ReApk</tabstop>
+  <tabstop>lineEdit_OptzApk</tabstop>
+  <tabstop>pushButton_OptzApk</tabstop>
+  <tabstop>lineEdit_SignApk</tabstop>
+  <tabstop>pushButton_SignApk</tabstop>
+  <tabstop>lineEdit_Framework</tabstop>
+  <tabstop>pushButton_InsFramework</tabstop>
+  <tabstop>pushButton_ViewFramework</tabstop>
+  <tabstop>lineEdit_Apk2Jar</tabstop>
+  <tabstop>pushButton_Apk2Jar</tabstop>
+  <tabstop>lineEdit_Dex2Jar</tabstop>
+  <tabstop>pushButton_Dex2Jar</tabstop>
+  <tabstop>pushButton_ClearLog</tabstop>
+  <tabstop>pushButton_ExportLog</tabstop>
+  <tabstop>pushButton_About</tabstop>
+  <tabstop>pushButton_CheckEvn</tabstop>
+  <tabstop>plainTextEdit_Log</tabstop>
+  <tabstop>lineEdit_KeyStorePath</tabstop>
+  <tabstop>pushButton_CreateKeyStore</tabstop>
+  <tabstop>pushButton_ChooseKeyStore</tabstop>
+  <tabstop>lineEdit_StorePassword</tabstop>
+  <tabstop>lineEdit_KeyAlias</tabstop>
+  <tabstop>lineEdit_KeyPassword</tabstop>
+  <tabstop>checkBox_Remember</tabstop>
+  <tabstop>checkBox_V1Signature</tabstop>
+  <tabstop>checkBox_V2Signature</tabstop>
+  <tabstop>checkBox_ReAutoOptz</tabstop>
+  <tabstop>checkBox_ReAutoSign</tabstop>
+  <tabstop>checkBox_DeAutoFix</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
