@@ -403,11 +403,11 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
             v1 = self.checkBox_V1Signature.isChecked()
             v2 = self.checkBox_V2Signature.isChecked()
             self.shellThread(
-                "SignApk",
-                "java -jar {} sign --ks {} --ks-pass pass:{} --ks-key-alias {} --key-pass pass:{} --v1-signing-enabled {} --v2-signing-enabled {} --in {} --out {}"
-                .format(self.binToolPath + self.apksigner, keyStorePath, storePassword, keyAlias, keyPassword,
-                        str(v1).lower(),
-                        str(v2).lower(), path, outPath))
+                "SignApk", "java -jar {} sign --ks {} --ks-pass pass:{} --ks-key-alias {} --key-pass pass:{} \
+                --v1-signing-enabled {} --v2-signing-enabled {} --in {} --out {}".format(self.binToolPath + self.apksigner, keyStorePath,
+                                                                                         storePassword, keyAlias, keyPassword,
+                                                                                         str(v1).lower(),
+                                                                                         str(v2).lower(), path, outPath))
 
     def on_pushButton_InsFramework(self):
         pass
