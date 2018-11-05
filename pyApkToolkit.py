@@ -32,6 +32,9 @@ class ShellThread(QtCore.QThread):
         self.command = command
         self.item = item
 
+    def __del__(self):
+        self.wait()
+
     def run(self):
         p = subprocess.Popen(self.command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         while p.poll() is None:
@@ -139,10 +142,10 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
 
     def shellThread(self, itme, command):
         self.addLog('命令: {}\r\n'.format(command))
-        thread = ShellThread(itme, command)
-        thread.signal_stdout.connect(self.addLog)  # 增强型错误信息
-        thread.signal_shell.connect(self.ShellThreadInfo)
-        thread.start()
+        self.thread = ShellThread(itme, command)
+        self.thread.signal_stdout.connect(self.addLog)  # 增强型错误信息
+        self.thread.signal_shell.connect(self.ShellThreadInfo)
+        self.thread.start()
 
     def ShellThreadInfo(self, returncode, item):
         tm = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -167,7 +170,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
             elif "ViewFramework" == item:
                 pass
             elif "Apk2Jar" == item:
-                self.addLog("[{}] .apkz转.jar成功！\r\n".format(tm))
+                self.addLog("[{}] .apk转.jar成功！\r\n".format(tm))
                 pass
             elif "Dex2Jar" == item:
                 self.addLog("[{}] .dex转.jar成功！\r\n".format(tm))
