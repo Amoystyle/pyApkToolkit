@@ -244,9 +244,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
             return False
 
         if os.environ['JAVA_HOME'] == '':
-            self.addLog("警告：请在环境变量中设置JAVA_HOME和PATH，例如：\r\n"
-                        "  JAVA_HOME=C:\\Program Files\\Java\\jre1.8.0_162\r\n"
-                        "  PATH=%PATH%;%JAVA_HOME%\\bin;\r\n")
+            self.addLog("警告：请在环境变量中设置JAVA_HOME和PATH，例如：\r\n" "  JAVA_HOME=C:\\Program Files\\Java\\jre1.8.0_162\r\n" "  PATH=%PATH%;%JAVA_HOME%\\bin;\r\n")
             return False
 
         return True
@@ -407,10 +405,10 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
             v2 = self.checkBox_V2Signature.isChecked()
             self.shellThread(
                 "SignApk", "java -jar {} sign --ks {} --ks-pass pass:{} --ks-key-alias {} --key-pass pass:{} \
-                --v1-signing-enabled {} --v2-signing-enabled {} --in \"{}\" --out \"{}\"".format(self.binToolPath + self.apksigner, keyStorePath,
-                                                                                         storePassword, keyAlias, keyPassword,
-                                                                                         str(v1).lower(),
-                                                                                         str(v2).lower(), path, outPath))
+                --v1-signing-enabled {} --v2-signing-enabled {} --in \"{}\" --out \"{}\"".format(self.binToolPath + self.apksigner, keyStorePath, storePassword,
+                                                                                                 keyAlias, keyPassword,
+                                                                                                 str(v1).lower(),
+                                                                                                 str(v2).lower(), path, outPath))
 
     def on_pushButton_InsFramework(self):
         pass
@@ -476,8 +474,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
 
             dname = dname.rstrip(',')
             self.shellThread(
-                "CreateKeyStore",
-                "keytool.exe -genkey -alias {} -keyalg RSA -dname {} -validity {} -keypass {} -keystore \"{}\" -storepass {}".format(
+                "CreateKeyStore", "keytool.exe -genkey -alias {} -keyalg RSA -dname {} -validity {} -keypass {} -keystore \"{}\" -storepass {}".format(
                     dlg.alias, dname, str(dlg.validity * 365), dlg.keyPass, dlg.keyStorePath, dlg.storePass))
 
     def on_pushButton_ChooseKeyStore(self):
