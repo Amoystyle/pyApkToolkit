@@ -347,13 +347,14 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
             # [15:50:51] 反编译文件：app-release1.apk，请稍后...
             tm = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
             self.addLog("[{}] 反编译文件: {}, 请稍后...\r\n".format(tm, apk))
-
+            '''
             # 检测到目录：H:\Android\test\app-release1已存在，删除此目录！
             if os.path.isdir(output):
                 self.addLog("检测到目录: {} 已存在, 删除此目录！\r\n".format(output))
                 shutil.rmtree(output)
+            '''
 
-            self.shellThread("DeApk", "java.exe -jar {} d -f \"{}\" -o \"{}\"".format(self.binToolPath + self.apktool, path, output))
+            self.shellThread("DeApk", "java.exe -jar \"{}\" d -f \"{}\" -o \"{}\"".format(self.binToolPath + self.apktool, path, output))
 
     # 重建.apk
     def on_pushButton_ReApk(self):
@@ -362,7 +363,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
 
         if os.path.isdir(path):
             outPath = self.bestPathAppend(path, 'R') + '.apk'
-            self.shellThread("ReApk", "java.exe -jar {} b -f \"{}\" -o \"{}\"".format(self.binToolPath + self.apktool, path, outPath))
+            self.shellThread("ReApk", "java.exe -jar \"{}\" b -f \"{}\" -o \"{}\"".format(self.binToolPath + self.apktool, path, outPath))
 
             if self.checkBox_ReAutoOptz.isChecked():
                 self.lineEdit_OptzApk.setText(outPath)
@@ -375,7 +376,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
         path = self.lineEdit_OptzApk.text()
         if os.path.isfile(path):
             outPath = self.bestPathAppend(path, 'O')
-            self.shellThread("OptzApk", "{} -f -v 4 \"{}\" \"{}\"".format(self.binToolPath + self.zipalign, path, outPath))
+            self.shellThread("OptzApk", "\"{}\" -f -v 4 \"{}\" \"{}\"".format(self.binToolPath + self.zipalign, path, outPath))
 
             if self.checkBox_ReAutoSign.isChecked():
                 self.lineEdit_SignApk.setText(outPath)
@@ -404,7 +405,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
             v1 = self.checkBox_V1Signature.isChecked()
             v2 = self.checkBox_V2Signature.isChecked()
             self.shellThread(
-                "SignApk", "java -jar {} sign --ks {} --ks-pass pass:{} --ks-key-alias {} --key-pass pass:{} \
+                "SignApk", "java -jar \"{}\" sign --ks \"{}\" --ks-pass pass:{} --ks-key-alias {} --key-pass pass:{} \
                 --v1-signing-enabled {} --v2-signing-enabled {} --in \"{}\" --out \"{}\"".format(self.binToolPath + self.apksigner, keyStorePath, storePassword,
                                                                                                  keyAlias, keyPassword,
                                                                                                  str(v1).lower(),
@@ -433,7 +434,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
                 self.addLog("检测到文件: {} 已存在, 删除此目录！\r\n".format(output))
                 os.remove(output)
 
-            self.shellThread("Apk2Jar", "{} \"{}\" -o \"{}\"".format(self.binToolPath + 'dex2jar/' + self.dex2jar, path, output))
+            self.shellThread("Apk2Jar", "\"{}\" \"{}\" -o \"{}\"".format(self.binToolPath + 'dex2jar/' + self.dex2jar, path, output))
 
     def on_pushButton_Dex2Jar(self):
         # self.lineEdit_Dex2Jar.setText('H:/Android/test/classes.dex')
@@ -452,7 +453,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
                 self.addLog("检测到文件: {} 已存在, 删除此目录！\r\n".format(output))
                 os.remove(output)
 
-            self.shellThread("Dex2Jar", "{} \"{}\" -o \"{}\"".format(self.binToolPath + 'dex2jar/' + self.dex2jar, path, output))
+            self.shellThread("Dex2Jar", "\"{}\" \"{}\" -o \"{}\"".format(self.binToolPath + 'dex2jar/' + self.dex2jar, path, output))
 
     # ============================== tab_2 ==============================
     def on_pushButton_CreateKeyStore(self):
