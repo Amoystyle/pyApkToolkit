@@ -1,6 +1,5 @@
 import sys
 import os
-import shutil
 import re
 import subprocess
 import platform
@@ -348,7 +347,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
             tm = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
             self.addLog("[{}] 反编译文件: {}, 请稍后...\r\n".format(tm, apk))
             '''
-            # 检测到目录：H:\Android\test\app-release1已存在，删除此目录！
+            # 检测到目录：H:/Android/test/app-release1已存在，删除此目录！
             if os.path.isdir(output):
                 self.addLog("检测到目录: {} 已存在, 删除此目录！\r\n".format(output))
                 shutil.rmtree(output)
