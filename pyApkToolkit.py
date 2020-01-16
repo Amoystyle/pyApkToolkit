@@ -201,10 +201,13 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
 
     def bestPathAppend(self, path, step):
         subPath, extension = os.path.splitext(path)
-        apk = os.path.basename(path)
+        if extension != '.apk':
+            subPath = path
+            extension = ''
 
-        p = re.compile(r"(?<=\.\()(.+?)(?=\).apk$)")
-        result = re.findall(p, apk)
+        # p = re.compile(r"(?<=.\()(.+?)(?=\).apk$)")
+        p = re.compile(r"([^\(]+)(?=\)$)")
+        result = re.findall(p, subPath)
         setup = ''
         if result:
             setup = result[0] + step
