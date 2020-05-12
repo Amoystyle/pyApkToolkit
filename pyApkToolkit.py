@@ -356,7 +356,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_Form):
                 shutil.rmtree(output)
             '''
 
-            self.shellThread("DeApk", "java.exe -jar \"{}\" d -f \"{}\" -o \"{}\"".format(self.binToolPath + self.apktool, path, output))
+            self.shellThread("DeApk", "java.exe -jar \"{}\" d --only-main-classe -f \"{}\" -o \"{}\"".format(self.binToolPath + self.apktool, path, output))
 
     # 重建.apk
     def on_pushButton_ReApk(self):
