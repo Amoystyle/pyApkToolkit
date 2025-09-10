@@ -1,6 +1,6 @@
 import sys
-from PyQt5 import (QtWidgets, QtCore, QtGui)
-from PyQt5.QtWidgets import (QMessageBox, QFileDialog)
+from PySide6 import (QtWidgets, QtGui)
+from PySide6.QtWidgets import (QMessageBox, QFileDialog)
 from Ui_NewKeyStoreDialog import Ui_Dialog_NewKeyStore
 
 
@@ -63,8 +63,8 @@ class Dialog_NewKeyStore(QtWidgets.QDialog, Ui_Dialog_NewKeyStore):
             self.msgBox('specify passwords')
         elif self.alias == '':
             self.msgBox('specify Alias')
-        elif (self.name == '') and (self.organizationalUnit == '') and (self.organization == '') and (self.locality == '') and (
-                self.state == '') and (self.countryCode == ''):
+        elif (self.name == '') and (self.organizationalUnit == '') and (self.organization
+                                                                        == '') and (self.locality == '') and (self.state == '') and (self.countryCode == ''):
             self.msgBox('At least one Certificate issuer field is required to be non-empty')
         elif (self.storePass != self.storePassConfirm) or (self.keyPass != self.keyPassConfirm):
             self.msgBox('Passwords do not match')

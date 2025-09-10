@@ -1,10 +1,10 @@
 # A python tool for reverse engineering Android apk files
 
-* 需使用python3 环境
+- 需使用 python3 环境
 
-* pip3 install -r requirements.txt
+- pip3 install -r requirements.txt
 
-* pyApkToolkit 工具目录下bin目录依赖的工具更新来源
+- pyApkToolkit 工具目录下 bin 目录依赖的工具更新来源
 
 | tools         | url                                                                              |
 | ------------- | -------------------------------------------------------------------------------- |

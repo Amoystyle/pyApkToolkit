@@ -6,7 +6,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PySide6 import QtCore, QtGui, QtWidgets
 
 class Ui_Dialog_NewKeyStore(object):
     def setupUi(self, Dialog_NewKeyStore):
@@ -135,7 +135,7 @@ class Ui_Dialog_NewKeyStore(object):
         self.spinBox_Validity.setObjectName("spinBox_Validity")
         self.buttonBox = QtWidgets.QDialogButtonBox(Dialog_NewKeyStore)
         self.buttonBox.setGeometry(QtCore.QRect(300, 388, 156, 23))
-        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
+        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel | QtWidgets.QDialogButtonBox.Ok)
         self.buttonBox.setObjectName("buttonBox")
 
         self.retranslateUi(Dialog_NewKeyStore)

@@ -6,7 +6,8 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PySide6 import QtCore, QtGui, QtWidgets
+
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -273,8 +274,18 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "ApkToolkit - By Arno"))
         self.groupBox.setTitle(_translate("Form", ".apk工具"))
-        self.lineEdit_DeApk.setToolTip(_translate("Form", "<h4><p>提示：<br>&nbsp;&nbsp;&nbsp;拖拽要反编译的.apk文件到此！<br><font color = \'red\'>注意：<br>&nbsp;&nbsp;&nbsp;路径中不能出现中文字符！</font></p></h4>"))
-        self.lineEdit_ReApk.setToolTip(_translate("Form", "<h4><p>提示：<br>&nbsp;&nbsp;&nbsp;拖拽要重建文件夹到此！<br><font color = \'red\'>注意：<br>&nbsp;&nbsp;&nbsp;路径中不能出现中文字符！</font></p></h4>"))
+        self.lineEdit_DeApk.setToolTip(
+            _translate(
+                "Form",
+                "<h4><p>提示：<br>&nbsp;&nbsp;&nbsp;拖拽要反编译的.apk文件到此！<br><font color = 'red'>注意：<br>&nbsp;&nbsp;&nbsp;路径中不能出现中文字符！</font></p></h4>",
+            )
+        )
+        self.lineEdit_ReApk.setToolTip(
+            _translate(
+                "Form",
+                "<h4><p>提示：<br>&nbsp;&nbsp;&nbsp;拖拽要重建文件夹到此！<br><font color = 'red'>注意：<br>&nbsp;&nbsp;&nbsp;路径中不能出现中文字符！</font></p></h4>",
+            )
+        )
         self.lineEdit_OptzApk.setToolTip(_translate("Form", "<h4><p>提示：<br>&nbsp;&nbsp;&nbsp;拖拽要优化的.apk文件到此！</p></h4>"))
         self.lineEdit_SignApk.setToolTip(_translate("Form", "<h4><p>提示：<br>&nbsp;&nbsp;&nbsp;拖拽要签名的.apk文件到此！</p></h4>"))
         self.pushButton_DeApk.setText(_translate("Form", "反编译.apk"))
@@ -299,10 +310,27 @@ class Ui_Form(object):
         self.checkBox_Remember.setText(_translate("Form", "Remember passwords"))
         self.pushButton_CreateKeyStore.setText(_translate("Form", "Create new..."))
         self.pushButton_ChooseKeyStore.setText(_translate("Form", "Choose existing..."))
-        self.lineEdit_KeyStorePath.setToolTip(_translate("Form", "<html><head/><body><p align=\"justify\"><span style=\" font-weight:600;\">指定密钥库的名称</span><span style=\" font-weight:600; color:#ff0000;\">keystore.jks</span></p></body></html>"))
-        self.lineEdit_StorePassword.setToolTip(_translate("Form", "<html><head/><body><p><span style=\" font-weight:600;\">指定密钥库的密码(获取keystore信息所需的密码，默认：arno123)</span></p></body></html>"))
-        self.lineEdit_KeyAlias.setToolTip(_translate("Form", "<html><head/><body><p><span style=\" font-weight:600;\">指定别名(每个keystore都关联这一个独一无二的alias，这个alias通常不区分大小写)</span></p></body></html>"))
-        self.lineEdit_KeyPassword.setToolTip(_translate("Form", "<html><head/><body><p><span style=\" font-weight:600;\">指定别名条目的密码(私钥的密码，默认：arno123)</span></p></body></html>"))
+        self.lineEdit_KeyStorePath.setToolTip(
+            _translate(
+                "Form",
+                '<html><head/><body><p align="justify"><span style=" font-weight:600;">指定密钥库的名称</span><span style=" font-weight:600; color:#ff0000;">keystore.jks</span></p></body></html>',
+            )
+        )
+        self.lineEdit_StorePassword.setToolTip(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" font-weight:600;">指定密钥库的密码(获取keystore信息所需的密码，默认：arno123)</span></p></body></html>',
+            )
+        )
+        self.lineEdit_KeyAlias.setToolTip(
+            _translate(
+                "Form",
+                '<html><head/><body><p><span style=" font-weight:600;">指定别名(每个keystore都关联这一个独一无二的alias，这个alias通常不区分大小写)</span></p></body></html>',
+            )
+        )
+        self.lineEdit_KeyPassword.setToolTip(
+            _translate("Form", '<html><head/><body><p><span style=" font-weight:600;">指定别名条目的密码(私钥的密码，默认：arno123)</span></p></body></html>')
+        )
         self.groupBox_7.setTitle(_translate("Form", "Signature"))
         self.checkBox_V1Signature.setText(_translate("Form", "V1(Jar Signature)"))
         self.checkBox_V2Signature.setText(_translate("Form", "V2(Full APK Signature)"))
@@ -312,14 +340,16 @@ class Ui_Form(object):
         self.checkBox_ReAutoOptz.setText(_translate("Form", "重建.apk时，自动对重建后的.apk文件进行优化。"))
         self.checkBox_ReAutoSign.setText(_translate("Form", "优化.apk时，自动对优化后的.apk文件进行签名。"))
         self.groupBox_5.setTitle(_translate("Form", "修复"))
-        self.checkBox_DeAutoFix.setText(_translate("Form", "反编译.apk时，自动修复.xml文件重出现的\'@*android:\'错误。"))
+        self.checkBox_DeAutoFix.setText(_translate("Form", "反编译.apk时，自动修复.xml文件重出现的'@*android:'错误。"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("Form", "选项"))
         self.label_Log.setText(_translate("Form", "日志 ："))
         self.pushButton_ClearLog.setText(_translate("Form", "清除"))
         self.pushButton_ExportLog.setText(_translate("Form", "导出"))
         self.pushButton_About.setText(_translate("Form", "关于"))
         self.pushButton_CheckEvn.setText(_translate("Form", "检测"))
-        self.plainTextEdit_Log.setPlainText(_translate("Form", "提示：使用apksigner，只能在APK文件签名之前执行zipalign。\n"
-"如果您使用apksigner对APK进行签名并对APK进行进一步更改，则其签名将失效。\n"
-""))
-
+        self.plainTextEdit_Log.setPlainText(
+            _translate(
+                "Form",
+                "提示：使用apksigner，只能在APK文件签名之前执行zipalign。\n" "如果您使用apksigner对APK进行签名并对APK进行进一步更改，则其签名将失效。\n" "",
+            )
+        )
